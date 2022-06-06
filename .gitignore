@@ -1,2 +1,10 @@
 .idea
 *.pyc
+
+
+# New Additions
+__MACOSX/
+
+pretrained.zip
+pretrained/
+tmp/

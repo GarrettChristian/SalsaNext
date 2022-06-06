@@ -315,42 +315,42 @@ class Parser():
     self.nclasses = len(self.learning_map_inv)
 
     # Data loading code
-    self.train_dataset = SemanticKitti(root=self.root,
-                                       sequences=self.train_sequences,
-                                       labels=self.labels,
-                                       color_map=self.color_map,
-                                       learning_map=self.learning_map,
-                                       learning_map_inv=self.learning_map_inv,
-                                       sensor=self.sensor,
-                                       max_points=max_points,
-                                       transform=True,
-                                       gt=self.gt)
+    # self.train_dataset = SemanticKitti(root=self.root,
+    #                                    sequences=self.train_sequences,
+    #                                    labels=self.labels,
+    #                                    color_map=self.color_map,
+    #                                    learning_map=self.learning_map,
+    #                                    learning_map_inv=self.learning_map_inv,
+    #                                    sensor=self.sensor,
+    #                                    max_points=max_points,
+    #                                    transform=True,
+    #                                    gt=self.gt)
 
-    self.trainloader = torch.utils.data.DataLoader(self.train_dataset,
-                                                   batch_size=self.batch_size,
-                                                   shuffle=self.shuffle_train,
-                                                   num_workers=self.workers,
-                                                   drop_last=True)
-    assert len(self.trainloader) > 0
-    self.trainiter = iter(self.trainloader)
+    # self.trainloader = torch.utils.data.DataLoader(self.train_dataset,
+    #                                                batch_size=self.batch_size,
+    #                                                shuffle=self.shuffle_train,
+    #                                                num_workers=self.workers,
+    #                                                drop_last=True)
+    # assert len(self.trainloader) > 0
+    # self.trainiter = iter(self.trainloader)
 
-    self.valid_dataset = SemanticKitti(root=self.root,
-                                       sequences=self.valid_sequences,
-                                       labels=self.labels,
-                                       color_map=self.color_map,
-                                       learning_map=self.learning_map,
-                                       learning_map_inv=self.learning_map_inv,
-                                       sensor=self.sensor,
-                                       max_points=max_points,
-                                       gt=self.gt)
+    # self.valid_dataset = SemanticKitti(root=self.root,
+    #                                    sequences=self.valid_sequences,
+    #                                    labels=self.labels,
+    #                                    color_map=self.color_map,
+    #                                    learning_map=self.learning_map,
+    #                                    learning_map_inv=self.learning_map_inv,
+    #                                    sensor=self.sensor,
+    #                                    max_points=max_points,
+    #                                    gt=self.gt)
 
-    self.validloader = torch.utils.data.DataLoader(self.valid_dataset,
-                                                   batch_size=self.batch_size,
-                                                   shuffle=False,
-                                                   num_workers=self.workers,
-                                                   drop_last=True)
-    assert len(self.validloader) > 0
-    self.validiter = iter(self.validloader)
+    # self.validloader = torch.utils.data.DataLoader(self.valid_dataset,
+    #                                                batch_size=self.batch_size,
+    #                                                shuffle=False,
+    #                                                num_workers=self.workers,
+    #                                                drop_last=True)
+    # assert len(self.validloader) > 0
+    # self.validiter = iter(self.validloader)
 
     if self.test_sequences:
       self.test_dataset = SemanticKitti(root=self.root,

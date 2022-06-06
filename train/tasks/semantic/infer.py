@@ -107,16 +107,16 @@ if __name__ == '__main__':
             shutil.rmtree(FLAGS.log)
         os.makedirs(FLAGS.log)
         os.makedirs(os.path.join(FLAGS.log, "sequences"))
-        for seq in DATA["split"]["train"]:
-            seq = '{0:02d}'.format(int(seq))
-            print("train", seq)
-            os.makedirs(os.path.join(FLAGS.log, "sequences", seq))
-            os.makedirs(os.path.join(FLAGS.log, "sequences", seq, "predictions"))
-        for seq in DATA["split"]["valid"]:
-            seq = '{0:02d}'.format(int(seq))
-            print("valid", seq)
-            os.makedirs(os.path.join(FLAGS.log, "sequences", seq))
-            os.makedirs(os.path.join(FLAGS.log, "sequences", seq, "predictions"))
+        # for seq in DATA["split"]["train"]:
+        #     seq = '{0:02d}'.format(int(seq))
+        #     print("train", seq)
+        #     os.makedirs(os.path.join(FLAGS.log, "sequences", seq))
+        #     os.makedirs(os.path.join(FLAGS.log, "sequences", seq, "predictions"))
+        # for seq in DATA["split"]["valid"]:
+        #     seq = '{0:02d}'.format(int(seq))
+        #     print("valid", seq)
+        #     os.makedirs(os.path.join(FLAGS.log, "sequences", seq))
+        #     os.makedirs(os.path.join(FLAGS.log, "sequences", seq, "predictions"))
         for seq in DATA["split"]["test"]:
             seq = '{0:02d}'.format(int(seq))
             print("test", seq)

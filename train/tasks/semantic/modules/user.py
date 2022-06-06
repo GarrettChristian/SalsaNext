@@ -38,8 +38,10 @@ class User():
                                    booger.TRAIN_PATH + '/tasks/semantic/dataset/' +
                                    self.DATA["name"] + '/parser.py')
     self.parser = parserModule.Parser(root=self.datadir,
-                                      train_sequences=self.DATA["split"]["train"],
-                                      valid_sequences=self.DATA["split"]["valid"],
+                                      # train_sequences=self.DATA["split"]["train"],
+                                      # valid_sequences=self.DATA["split"]["valid"],
+                                      train_sequences=[],
+                                      valid_sequences=[],
                                       test_sequences=self.DATA["split"]["test"],
                                       labels=self.DATA["labels"],
                                       color_map=self.DATA["color_map"],
