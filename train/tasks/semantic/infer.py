@@ -103,10 +103,12 @@ if __name__ == '__main__':
 
     # create log folder
     try:
-        if os.path.isdir(FLAGS.log):
-            shutil.rmtree(FLAGS.log)
-        os.makedirs(FLAGS.log)
-        os.makedirs(os.path.join(FLAGS.log, "sequences"))
+        # if os.path.isdir(FLAGS.log):
+        #     shutil.rmtree(FLAGS.log)
+        if not os.path.exists(FLAGS.log):
+            os.makedirs(FLAGS.log)
+        if not os.path.exists(os.path.join(FLAGS.log, "sequences")):
+            os.makedirs(os.path.join(FLAGS.log, "sequences"))
         # for seq in DATA["split"]["train"]:
         #     seq = '{0:02d}'.format(int(seq))
         #     print("train", seq)
@@ -120,8 +122,8 @@ if __name__ == '__main__':
         for seq in DATA["split"]["test"]:
             seq = '{0:02d}'.format(int(seq))
             print("test", seq)
-            os.makedirs(os.path.join(FLAGS.log, "sequences", seq))
-            os.makedirs(os.path.join(FLAGS.log, "sequences", seq, "predictions"))
+            os.makedirs(os.path.join(FLAGS.log, "sequences", seq), exist_ok=True)
+            os.makedirs(os.path.join(FLAGS.log, "sequences", seq, "predictions"), exist_ok=True)
     except Exception as e:
         print(e)
         print("Error creating log directory. Check permissions!")
