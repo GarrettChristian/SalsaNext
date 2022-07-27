@@ -5,6 +5,6 @@
 # New Additions
 __MACOSX/
 
-pretrained.zip
+*.zip
 pretrained/
 tmp/
