@@ -1,3 +1,36 @@
+# SalsaNext
+
+Fork for Semantic LiDAR Fuzzer
+
+---
+
+## Setup
+- Download model from https://drive.google.com/file/d/1_F8oS0vjU3GjU7WB07m_HfXQFz-ViKN0/view?usp=sharing
+- Extract to root of SalsaNext, should look like
+  - sutDir/SalsaNext/pretrained/SalsaNext
+  - sutDir/SalsaNext/pretrained/arch_cfg.yaml
+  - sutDir/SalsaNext/pretrained/data_cfg.yaml
+
+## Build Docker Image
+
+```
+cd to SalsaNext directory
+docker build . -t salsanext_image
+```
+
+
+## Run Docker Image
+- See Sample Run in runSalsaDocker.sh or in the docker runner of semLidarFuzzer
+
+
+## Remove Docker Container
+```
+docker container stop salsanext && docker container rm salsanext
+```
+
+---
+
+
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/salsanext-fast-semantic-segmentation-of-lidar/3d-semantic-segmentation-on-semantickitti)](https://paperswithcode.com/sota/3d-semantic-segmentation-on-semantickitti?p=salsanext-fast-semantic-segmentation-of-lidar) [![arXiv](https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg)](https://arxiv.org/abs/2003.03653)
 
 # SalsaNext: Fast, Uncertainty-aware Semantic Segmentation of LiDAR Point Clouds for Autonomous Driving
